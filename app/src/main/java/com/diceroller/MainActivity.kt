@@ -17,12 +17,14 @@ class MainActivity : AppCompatActivity() {
     //
     // In this we ensure to use a variable after its initialization
     lateinit var diceImage : ImageView
+    val a:String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         diceImage = findViewById(R.id.dice_image)
+        var a = 120
 
         val rollButton: Button = findViewById(R.id.roll_button)
         rollButton.setOnClickListener {
@@ -33,7 +35,9 @@ class MainActivity : AppCompatActivity() {
     private fun rollDice() {
         val randomInt  = Random().nextInt(6) + 1
         val drawableResource = when (randomInt){
-            1 -> R.drawable.dice_1
+            1 -> {
+                R.drawable.dice_1
+            }
             2 -> R.drawable.dice_2
             3 -> R.drawable.dice_3
             4 -> R.drawable.dice_4
